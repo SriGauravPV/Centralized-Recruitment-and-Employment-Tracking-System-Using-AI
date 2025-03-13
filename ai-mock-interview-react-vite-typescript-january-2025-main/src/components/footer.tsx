@@ -76,22 +76,22 @@ export const Footer = () => {
             <p className="mb-4">REVA UNIVERSITY, Rukmini Knowledge Park, Yelahanka, Kattigenahalli, Bengaluru, Sathanur, Karnataka 560064</p>
             <div className="flex gap-4"> 
               <SocialLink
-                href="https://facebook.com"
+                href="https://www.facebook.com/p/REVA-University-Bangalore-100054242540296/"
                 icon={<Facebook size={24} />}
                 hoverColor="text-blue-500"
               />
               <SocialLink
-                href="https://twitter.com"
+                href="https://twitter.com/REVAUniversity"
                 icon={<Twitter size={24} />}
                 hoverColor="text-blue-400"
               />
               <SocialLink
-                href="https://instagram.com"
+                href="https://www.instagram.com/revauniversity_official/"
                 icon={<Instagram size={24} />}
                 hoverColor="text-pink-500"
               />
               <SocialLink
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/school/reva-university/"
                 icon={<Linkedin size={24} />}
                 hoverColor="text-blue-700"
               />

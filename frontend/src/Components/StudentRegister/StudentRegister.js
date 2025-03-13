@@ -25,8 +25,11 @@ const ProfileForm = () => {
     state: '',
     skills: '',
     designation: '',
-    acceptTerms: false
+    acceptTerms: false,
+    resumeUrl: '' // New field to store the base64 string
   });
+
+  const [fileError, setFileError] = useState('');
 
   const initialState = {
     firstName: "",
@@ -42,8 +45,10 @@ const ProfileForm = () => {
     city: "",
     state: "",
     skills: "",
-    acceptTerms: false
-};
+    acceptTerms: false,
+    resumeUrl: ""
+  };
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData(prev => ({
@@ -52,25 +57,69 @@ const ProfileForm = () => {
     }));
   };
 
+  // Handle file upload and convert to base64
+  const handleFileUpload = (e) => {
+    const file = e.target.files[0];
+    
+    // Reset file error
+    setFileError('');
+    
+    // Check if file exists
+    if (!file) return;
+    
+    // Validate file is PDF
+    if (file.type !== 'application/pdf') {
+      setFileError('Only PDF files are allowed!');
+      e.target.value = ''; // Clear the file input
+      return;
+    }
+    
+    // Validate file size (limit to 5MB)
+    if (file.size > 5 * 1024 * 1024) {
+      setFileError('File size must be less than 5MB!');
+      e.target.value = ''; // Clear the file input
+      return;
+    }
+    
+    // Convert file to base64
+    const reader = new FileReader();
+    reader.onload = () => {
+      const base64String = reader.result;
+      setFormData(prev => ({
+        ...prev,
+        resumeUrl: base64String
+      }));
+    };
+    reader.onerror = () => {
+      setFileError('Error reading file!');
+    };
+    reader.readAsDataURL(file);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-  if (formData.password !== formData.confirmPassword) {
-    alert("Passwords do not match!");
-    return;
-  }
+    if (formData.password !== formData.confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+    }
 
     try {
-      const response = await axios.post("http://localhost:5000/api/students/register", formData);
+      const response = await axios.post("/api/students/register", formData);
 
-        if (response.status === 201) {
-            alert(response.data.message);
-            setFormData({ ...initialState }); // Reset form
+      if (response.status === 201) {
+        alert(response.data.message);
+        setFormData({ ...initialState }); // Reset form
+        // Clear file input
+        const fileInput = document.getElementById('file-upload');
+        if (fileInput) {
+          fileInput.value = '';
         }
+      }
     } catch (error) {
-        console.error("Error submitting form:", error);
-        alert("Registration failed: " + error.response?.data?.error || error.message);
+      console.error("Error submitting form:", error);
+      alert("Registration failed: " + error.response?.data?.error || error.message);
     }
-};
+  };
 
   return (
     <>
@@ -288,10 +337,22 @@ const ProfileForm = () => {
                     className="form-control"
                     id="file-upload"
                     accept=".pdf"
+                    onChange={handleFileUpload}
                   />
-                  <div className="form-text text-danger">
-                    File Format PDF Only!
-                  </div>
+                  {fileError ? (
+                    <div className="form-text text-danger">
+                      {fileError}
+                    </div>
+                  ) : (
+                    <div className="form-text text-danger">
+                      File Format PDF Only! (Max 5MB)
+                    </div>
+                  )}
+                  {formData.resumeUrl && (
+                    <div className="form-text text-success">
+                      PDF uploaded successfully!
+                    </div>
+                  )}
                 </div>
               </div>
               

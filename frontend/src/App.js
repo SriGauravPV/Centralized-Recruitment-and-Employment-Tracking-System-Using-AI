@@ -22,6 +22,7 @@ import StudentResumeDatabase from './Components/ResumeDatabase/ResumeDatabase';
 import AdminDashboard from './Components/AdminDashboard/AdminDashboard';
 import MyApplication from './Components/MyApplication/MyApplication';
 import ResetPassword from './Components/ResetComponent/ResetComponent';
+import AppliedStudents from './Components/AppliedStudents/AppliedStudents';
 
 const ProtectedRoute = ({ allowedRoles }) => {
     const role = sessionStorage.getItem('role');
@@ -65,6 +66,7 @@ const App = () => {
                 <Route path='/home/adminDashboard' element={<AdminDashboard />} />
                 <Route path="/home/PlacedStudents" element={<PlacedStudentsList />} />
                 <Route path="/home/students-database" element={<SelectedStudent />} />
+                <Route path="/home/applied-students-database" element={<AppliedStudents />} />
             </Route>
         </Routes>
       </div>

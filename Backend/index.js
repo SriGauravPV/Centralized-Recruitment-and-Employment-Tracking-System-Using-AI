@@ -12,6 +12,7 @@ const drives = require('./routes/CompanyDrive');
 const Message = require('./routes/Message');
 const total = require('./routes/total');
 const forget = require('./routes/forgotpassword');
+const getstudentsbycompany = require('./routes/getstudentsbycompany');
 
 const app = express();
 
@@ -32,6 +33,7 @@ app.use('/api/drives',drives);
 app.use('/api/messages', Message);
 app.use('/api/admin',total)
 app.use('/api/auth', forget);
+app.use('/api',getstudentsbycompany);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

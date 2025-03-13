@@ -122,7 +122,7 @@ const Home = () => {
               <div className="col-lg-3 col-xs-6">
                 <div className="small-box bg-aqua">
                   <div className="inner">
-                    <h3>50</h3>
+                    <h3>300+</h3>
                     <p>Total Drives</p>
                   </div>
                   <div class="icon">
@@ -133,7 +133,7 @@ const Home = () => {
               <div className="col-lg-3 col-xs-6">
                 <div className="small-box bg-green">
                   <div className="inner">
-                    <h3>120</h3>
+                    <h3>2200+</h3>
                     <p>Job Offers</p>
                   </div>
                   <div class="icon">
@@ -144,7 +144,7 @@ const Home = () => {
               <div className="col-lg-3 col-xs-6">
                 <div className="small-box bg-yellow">
                   <div className="inner">
-                    <h3>80</h3>
+                    <h3>1500+</h3>
                     <p>CV'S/Resume</p>
                   </div>
                   <div class="icon">
@@ -155,7 +155,7 @@ const Home = () => {
               <div className="col-lg-3 col-xs-6">
                 <div className="small-box bg-red">
                   <div className="inner">
-                    <h3>200</h3>
+                    <h3>200+</h3>
                     <p>Daily Users</p>
                   </div>
                   <div class="icon">

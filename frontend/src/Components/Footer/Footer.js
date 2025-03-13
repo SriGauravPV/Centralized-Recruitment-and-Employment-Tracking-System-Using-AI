@@ -17,7 +17,7 @@ const Footer = () => {
                         </div>
 
                         <div className="social-links order-first order-lg-last mb-3 mb-lg-0">
-                            <a href="https://twitter.com/REVAUniversity" className="twitter" target="_blank" rel="noopener noreferrer">
+                            <a href="https://twitter.com/REVAUniversity"  className="twitter" target="_blank" rel="noopener noreferrer">
                                 <i className="bi bi-twitter"></i>
                             </a>
                             <a href="https://www.facebook.com/p/REVA-University-Bangalore-100054242540296/" className="facebook" target="_blank" rel="noopener noreferrer">
