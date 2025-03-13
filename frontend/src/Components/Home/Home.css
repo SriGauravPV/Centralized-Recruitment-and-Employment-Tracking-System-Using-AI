@@ -1,0 +1,29 @@
+body {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+
+.navbar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Aligns the menu items in the center */
+    align-items: center;
+}
+
+.navbar ul li {
+    margin: 0 15px; /* Adjust the margin between menu items */
+}
+
+.navbar ul li a {
+    font-size: 16px; /* Adjust the font size as needed */
+    color: #000; /* Set the font color */
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #007bff; /* Set the font color on hover */
+}
+

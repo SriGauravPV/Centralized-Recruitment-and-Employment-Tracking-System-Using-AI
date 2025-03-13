@@ -1,0 +1,221 @@
+/* Main Container Styles */
+.students-container {
+    padding: 2rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+    min-height: 100vh;
+  }
+  
+  .main-title {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeInDown 0.8s ease-out;
+  }
+  
+  /* Filter Section Styles */
+  .filter-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    animation: slideIn 0.6s ease-out;
+  }
+  
+  .search-box {
+    position: relative;
+    max-width: 500px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+  }
+  
+  .search-input {
+    padding-left: 40px;
+    height: 45px;
+    border-radius: 25px;
+    border: 2px solid #e0e0e0;
+    transition: all 0.3s ease;
+  }
+  
+  .search-input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  
+  /* Button Styles */
+  .button-group {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .PlacedStudennt-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+  }
+  
+  .export-btn {
+    background: #4361ee;
+    border: none;
+  }
+  
+  .export-btn:hover {
+    background: #3046c1;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+  }
+  
+  .sort-btn {
+    background: #2ecc71;
+    border: none;
+  }
+  
+  .sort-btn:hover {
+    background: #27ae60;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+  }
+  
+  .btn-clicked {
+    transform: scale(0.95);
+  }
+  
+  /* Table Styles */
+  .table-container {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    animation: slideUp 0.6s ease-out;
+  }
+  
+  .table {
+    margin-bottom: 0;
+  }
+  
+  .table thead th {
+    background: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+    color: #2c3e50;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 1rem;
+  }
+  
+  .student-row {
+    transition: all 0.3s ease;
+  }
+  
+  .student-row:hover {
+    background-color: #f8f9fa;
+    transform: translateX(5px);
+  }
+  
+  .lock-icon {
+    color: #95a5a6;
+    transition: all 0.3s ease;
+  }
+  
+  .student-row:hover .lock-icon {
+    color: #34495e;
+    transform: scale(1.2);
+  }
+  
+  /* Loader Styles */
+  .loader-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+  }
+  
+  .loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  /* Animations */
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .students-container {
+      padding: 1rem;
+    }
+  
+    .main-title {
+      font-size: 2rem;
+    }
+  
+    .button-group {
+      flex-direction: column;
+    }
+  
+    .PlacedStudennt-btn {
+      width: 100%;
+      justify-content: center;
+    }
+  
+    .table-container {
+      margin-top: 1rem;
+    }
+  }

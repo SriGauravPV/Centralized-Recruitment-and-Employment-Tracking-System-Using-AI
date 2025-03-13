@@ -1,0 +1,29 @@
+.form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+  }
+  
+  .card {
+    transition: all 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.02);
+  }
+  
+  .btn-submit {
+    transition: all 0.3s ease;
+  }
+  
+  .btn-submit:hover {
+    transform: scale(1.05);
+  }
+  
+  .form-floating {
+    transition: all 0.3s ease;
+  }
+  
+  .form-floating:hover {
+    transform: translateY(-2px);
+  }
