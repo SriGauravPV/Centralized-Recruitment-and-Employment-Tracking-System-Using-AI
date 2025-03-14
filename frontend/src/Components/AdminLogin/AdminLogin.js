@@ -8,7 +8,8 @@ import ChatBot from '../ChatBot/ChatBot';
 const AdminLogin = () => {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({ email: '', password: '' });
-    
+    const [showPassword, setShowPassword] = useState(false);
+   
     // Hardcoded admin credentials
     const validCredentials = [
         { email: 'admin@reva.edu', password: 'admin123' },
@@ -18,12 +19,11 @@ const AdminLogin = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        
+       
         // Check if credentials match any valid admin
         const isValidAdmin = validCredentials.some(
             admin => admin.email === formData.email && admin.password === formData.password
         );
-
         if (isValidAdmin) {
             // Store a simple token in localStorage
             sessionStorage.setItem('role', 'admin');
@@ -37,6 +37,10 @@ const AdminLogin = () => {
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
     };
 
     return (
@@ -70,7 +74,7 @@ const AdminLogin = () => {
                             </div>
                             <div className='input-box'>
                                 <input
-                                    type='password'
+                                    type={showPassword ? 'text' : 'password'}
                                     name="password"
                                     required
                                     value={formData.password}
@@ -78,6 +82,16 @@ const AdminLogin = () => {
                                 />
                                 <label>Password</label>
                                 <i className='bx bxs-lock-alt'></i>
+                                <i 
+                                    className={`bx ${showPassword ? 'bxs-hide' : 'bxs-show'}`} 
+                                    onClick={togglePasswordVisibility}
+                                    style={{
+                                        position: "absolute",
+                                        right: "25px", 
+                                        cursor: "pointer",
+                                        fontSize: "1.2rem"
+                                    }}
+                                ></i>
                             </div>
                             <button type='submit' className='Login-btn'>
                                 Login

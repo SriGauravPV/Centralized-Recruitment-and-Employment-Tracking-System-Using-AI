@@ -15,6 +15,7 @@ const StudentLogin = () => {
     const [resetEmail, setResetEmail] = useState('');
     const [resetSuccess, setResetSuccess] = useState(false);
     const [resetError, setResetError] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -40,6 +41,10 @@ const StudentLogin = () => {
 
     const handleResetEmailChange = (e) => {
         setResetEmail(e.target.value);
+    };
+
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
     };
 
     const handleResetPassword = async (e) => {
@@ -84,9 +89,25 @@ const StudentLogin = () => {
                                     <i className='bx bxs-user'></i>
                                 </div>
                                 <div className='input-box'>
-                                    <input type='password' name="password" required value={formData.password} onChange={handleChange}></input>
+                                    <input 
+                                        type={showPassword ? 'text' : 'password'} 
+                                        name="password" 
+                                        required 
+                                        value={formData.password} 
+                                        onChange={handleChange}
+                                    />
                                     <label>Password</label>
                                     <i className='bx bxs-lock-alt'></i>
+                                    <i 
+                                        className={`bx ${showPassword ? 'bxs-hide' : 'bxs-show'}`} 
+                                        onClick={togglePasswordVisibility}
+                                        style={{
+                                            position: "absolute",
+                                            right: "25px", 
+                                            cursor: "pointer",
+                                            fontSize: "1.2rem"
+                                        }}
+                                    ></i>
                                 </div>
                                 <div className='forgot-password'>
                                     <p onClick={handleForgotPassword} style={{cursor:"pointer", color: "#3498db", textDecoration: "underline", marginBottom: "10px"}}>Forgot Password?</p>
