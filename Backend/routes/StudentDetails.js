@@ -235,6 +235,7 @@ router.put("/student/profile", authenticateToken, async (req, res) => {
       twelthmarks,
       ugmarks,
       pgmarks,
+      resumeUrl,
     } = req.body;
 
     // Find student
@@ -258,6 +259,7 @@ router.put("/student/profile", authenticateToken, async (req, res) => {
     student.twelthmarks = twelthmarks || student.twelthmarks;
     student.ugmarks = ugmarks || student.ugmarks;
     student.pgmarks = pgmarks || student.pgmarks;
+    student.resumeUrl = resumeUrl || student.resumeUrl;
     student.updatedAt = Date.now();
 
     // Save updated student

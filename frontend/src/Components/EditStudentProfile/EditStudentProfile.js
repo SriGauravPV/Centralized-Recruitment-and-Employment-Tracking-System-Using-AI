@@ -19,6 +19,7 @@ const EditProfileForm = ({ studentData }) => {
     twelthmarks: studentData?.twelthmarks || '',
     ugmarks: studentData?.ugmarks || '',
     pgmarks: studentData?.pgmarks || '',
+    resumeUrl: studentData?.resumeUrl || '',
   });
 
   const [resumeFile, setResumeFile] = useState(null);
@@ -44,6 +45,7 @@ const EditProfileForm = ({ studentData }) => {
         twelthmarks: studentData.twelthmarks || '',
         ugmarks: studentData.ugmarks || '',
         pgmarks: studentData.pgmarks || '',
+        resumeUrl: studentData.resumeUrl || '',
       });
     }
   }, [studentData]);
@@ -61,6 +63,20 @@ const EditProfileForm = ({ studentData }) => {
     }
   };
 
+  // Convert file to base64
+  const convertToBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+      fileReader.onload = () => {
+        resolve(fileReader.result);
+      };
+      fileReader.onerror = (error) => {
+        reject(error);
+      };
+    });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -72,10 +88,23 @@ const EditProfileForm = ({ studentData }) => {
         throw new Error('Authentication token not found');
       }
 
-      // Update profile information
+      // If there's a resume file, convert it to base64
+      let updatedFormData = { ...formData };
+      
+      if (resumeFile) {
+        try {
+          const base64Resume = await convertToBase64(resumeFile);
+          updatedFormData.resumeUrl = base64Resume;
+        } catch (error) {
+          console.error('Error converting file to base64:', error);
+          throw new Error('Failed to process resume file');
+        }
+      }
+
+      // Update profile information with the base64 resume included
       const response = await axios.put(
         '/api/student/profile',
-        formData,
+        updatedFormData,
         {
           headers: {
             'Content-Type': 'application/json',
@@ -83,23 +112,6 @@ const EditProfileForm = ({ studentData }) => {
           }
         }
       );
-
-      // If there's a resume file, upload it
-      if (resumeFile) {
-        const formData = new FormData();
-        formData.append('resume', resumeFile);
-        
-        await axios.post(
-          '/api/student/upload-resume',
-          formData,
-          {
-            headers: {
-              'Content-Type': 'multipart/form-data',
-              'Authorization': `Bearer ${token}`
-            }
-          }
-        );
-      }
 
       setMessage({ 
         type: 'success', 

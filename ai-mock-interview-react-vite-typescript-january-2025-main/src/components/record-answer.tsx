@@ -301,12 +301,12 @@ export const RecordAnswer = ({
         <h2 className="text-lg font-semibold">Your Answer:</h2>
 
         <p className="text-sm mt-2 text-gray-700 whitespace-normal">
-          {userAnswer || "Start recording to see your ansewer here"}
+          {userAnswer || "Start recording to see your answer here"}
         </p>
 
         {interimResult && (
           <p className="text-sm text-gray-500 mt-2">
-            <strong>Current Speech:</strong>
+            <strong>Current Speech: </strong>
             {interimResult}
           </p>
         )}

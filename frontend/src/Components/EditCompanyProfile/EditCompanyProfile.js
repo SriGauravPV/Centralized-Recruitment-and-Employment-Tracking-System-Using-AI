@@ -398,7 +398,7 @@ const CompanyProfileEdit = () => {
                 </div>
               </div>
 
-              {isEditing && (
+              {/* {isEditing && (
                 <div className="col-12">
                   <div className="fancy-input">
                     <div className="file-input-wrapper">
@@ -426,7 +426,7 @@ const CompanyProfileEdit = () => {
                     )}
                   </div>
                 </div>
-              )}
+              )} */}
             </div>
 
             {isEditing && (

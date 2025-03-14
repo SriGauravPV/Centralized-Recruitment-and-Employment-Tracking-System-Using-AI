@@ -43,7 +43,7 @@ const handleFileChange = (e) => {
     formDataWithFile.append('profilePicture', profilePicture);
   }
     try {
-      const response = await axios.post("http://localhost:5000/api/companies/register", formDataWithFile, {
+      const response = await axios.post("/api/companies/register", formDataWithFile, {
         headers: {'Content-Type': 'multipart/form-data'}
       });
       alert(response.data.message);
@@ -191,8 +191,8 @@ const handleFileChange = (e) => {
                         </select>
                       </div>
 
-                      <div className="mb-3">
-                        <label htmlFor="profilePicture" className="form-label">Upload Profile Picture</label>
+                      {/* <div className="mb-3">
+                        <label htmlFor="profilePicture" className="form-label">Upload Profile Picture (OPTIONAL)</label>
                         <input
                           type="file"
                           className="form-control"
@@ -200,7 +200,7 @@ const handleFileChange = (e) => {
                           onChange={handleFileChange}
                           accept="image/*"
                         />
-                      </div>
+                      </div> */}
                     </div>
                   </div>
 
