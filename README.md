@@ -2,7 +2,7 @@
 
 📘 Project Description
 
-This is a comprehensive AI-powered Placement Portal developed as a final-year project for our college. It is designed to streamline and digitize the end-to-end campus recruitment process for students, companies, and college administrators.
+This is a comprehensive AI-powered Placement Portal developed as a final-year project for our college REVA UNIVERSITY. It is designed to streamline and digitize the end-to-end campus recruitment process for students, companies, and college administrators.
 
 The portal offers three types of logins:
 
