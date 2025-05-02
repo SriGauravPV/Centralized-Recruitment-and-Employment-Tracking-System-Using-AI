@@ -1,6 +1,6 @@
 🎓 Final Year Project — College Placement Portal
-📘 Project Description
 
+📘 Project Description
 This is a comprehensive AI-powered Placement Portal developed as a final-year project for our college. It is designed to streamline and digitize the end-to-end campus recruitment process for students, companies, and college administrators.
 
 The portal offers three types of logins:
@@ -8,7 +8,7 @@ The portal offers three types of logins:
     🏢 Company Login
     🛠️ Admin Login
 
-  🧭 How It Works
+🧭 How It Works
 1. Admin Module
     Admin verifies and manages student and company registrations.
     Can view all posted drives and student applications.
