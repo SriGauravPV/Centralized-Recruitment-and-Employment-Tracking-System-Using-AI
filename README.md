@@ -91,3 +91,40 @@ MONGODB_URL=mongodb://127.0.0.1:27017/placementPortal
 GEMINI_API_KEY=ENTER_YOUR_GEMINI_API_KEY_HERE
 
 BASE_URL=http://localhost:3000
+
+## 📸 Screenshots
+
+### Home Page
+<img src="images/4685cf31116c48ee9e1473d656950757.jpg" width="600"/>
+
+### ChatBot
+<img src="images/2bb3cc26cb374f3eb53c2e8770954e46.jpg" width="200"/>
+
+### Login Page
+<img src="images/5eda9bca952e4c69b08d087a3f80c9e8.jpg" width="600"/>
+
+### Student Applications
+<img src="images/121948c5b83d4f8c88499d28fa24753d.jpg" width="600"/>
+
+### Mail
+<img src="images/3754113e1fc84574acef2838a16cd8bc.jpg" width="600"/>
+
+### AI Mock Interview Starting Page
+<img src="images/2290925a161c43708f56510922e40fbf.jpg" width="600"/>
+
+### Ai Mock Interview Feedback
+<img src="images/08d9283078c64228ae5322181ff33374.jpg" width="600"/>
+
+### AI Resume Generator
+<img src="images/38c886e9901749749ad3cf02d5972268.jpg" width="600"/>
+
+### AI Resume Generator Dashboard
+<img src="images/73380b7140aa40999de20872678b43a7.jpg" width="600"/>
+
+### Preview of AI Resume Generator
+<img src="images/5d3f26635ff947ffbb6fc6dcd155af8a.jpg" width="600"/>
+
+### AI Resume Generator Suggestions Page
+<img src="images/ad8b8a488782446095f2872b16a53111.jpg" width="600"/>
+
+
