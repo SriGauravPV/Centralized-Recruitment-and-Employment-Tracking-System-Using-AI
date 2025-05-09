@@ -1,6 +1,6 @@
 # 🎓 Final Year Project — College Placement Portal
 
-📘 Project Description
+##📘 Project Description
 
 This is a comprehensive AI-powered Placement Portal developed as a final-year project for our college REVA UNIVERSITY. It is designed to streamline and digitize the end-to-end campus recruitment process for students, companies, and college administrators.
 
@@ -10,7 +10,7 @@ The portal offers three types of logins:
     🏢 Company Login
     🛠️ Admin Login
 
-🧭 How It Works
+##🧭 How It Works
 
 1. Admin Module
     Admin verifies and manages student and company registrations.
@@ -29,12 +29,12 @@ The portal offers three types of logins:
     Can generate AI-enhanced resumes through the integrated Resume Generator tool.
     Participate in AI-powered mock interviews to enhance preparation.
 
-🤖 AI-Powered Features
+##🤖 AI-Powered Features
 
     AI Resume Generator : Students can generate smart, professional resumes using AI by providing key details.
     Mock Interview Module : Offers students an interactive AI-based mock interview experience for better readiness.
 
-🧪 Tech Stack
+##🧪 Tech Stack
 
     Frontend: React, Vite, Next, Tailwind CSS
     Backend: Node.js, Express.js
@@ -43,7 +43,7 @@ The portal offers three types of logins:
     AI Integration: Gemini API
     Other Tools: EmailJS, jsPDF, html2canvas
 
-🚀 Live Ports & Running Instructions
+##🚀 Live Ports & Running Instructions
 | Module                    | Localhost Port   | Start Command |
 | ------------------------- | ---------------- | ------------- |
 | **Frontend**              | `localhost:3001` | `npm start`   |
@@ -52,10 +52,10 @@ The portal offers three types of logins:
 | **Resume Generator (AI)** | `localhost:3000` | `npm run dev` |
 ⚠️ Note: Please start the Resume Generator before running the other modules to avoid errors.
 
-🔐 Environment Files Setup
+##🔐 Environment Files Setup
 Replace all ENTER_HERE values with your actual credentials or keys.
 
-✅ Backend .env
+###✅ Backend .env
 
 MONGODB_URI=mongodb://127.0.0.1:27017/placementPortal
 JWT_SECRET=ENTER_YOUR_JWT_SECRET_HERE
@@ -64,11 +64,11 @@ EMAIL_USER=ENTER_YOUR_EMAIL_HERE
 EMAIL_PASSWORD=ENTER_YOUR_EMAIL_PASSWORD_HERE
 CLIENT_URL=http://localhost:3001
 
-✅ Frontend .env
+###✅ Frontend .env
 
 REACT_APP_GEMINI_API_KEY=ENTER_YOUR_GEMINI_API_KEY_HERE
 
-✅ AI Mock Interview .env
+###✅ AI Mock Interview .env
 
 VITE_CLERK_PUBLISHABLE_KEY=ENTER_YOUR_CLERK_PUBLISHABLE_KEY_HERE
 VITE_FIREBASE_AUTH_DOMAIN=ENTER_YOUR_FIREBASE_AUTH_DOMAIN_HERE
@@ -79,7 +79,7 @@ VITE_FIREBASE_APP_ID=ENTER_YOUR_FIREBASE_APP_ID_HERE
 CLERK_SECRET_KEY=ENTER_YOUR_CLERK_SECRET_KEY_HERE
 VITE_GEMINI_API_KEY=ENTER_YOUR_GEMINI_API_KEY_HERE
 
-✅ Resume Generator .env.local
+###✅ Resume Generator .env.local
 
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=ENTER_YOUR_CLERK_PUBLISHABLE_KEY_HERE
 CLERK_SECRET_KEY=ENTER_YOUR_CLERK_SECRET_KEY_HERE
